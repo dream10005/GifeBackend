@@ -1,0 +1,19 @@
+{
+  "name": "gife-backend",
+  "version": "1.0.0",
+  "description": "Super fast GIFE miceoservices using super lightweight nodejs Micro ",
+  "main": "index.js",
+  "repository": "https://github.com/dream10005/gife-backend.git",
+  "author": "Jirat Onaree <jirat.onaree@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "micro",
+    "dev": "micro-dev"
+  },
+  "dependencies": {
+    "micro": "^9.0.2",
+    "micro-dev": "^2.1.1",
+    "microrouter": "^3.0.0",
+    "serverless-google-cloudfunctions": "^1.1.1"
+  }
+}
