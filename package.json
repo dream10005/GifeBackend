@@ -17,6 +17,7 @@
     "micro": "^9.0.2",
     "micro-dev": "^2.1.1",
     "microrouter": "^3.0.0",
+    "mysql": "^2.15.0",
     "serverless-google-cloudfunctions": "^1.1.1"
   }
 }
