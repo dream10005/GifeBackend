@@ -11,6 +11,9 @@
     "dev": "micro-dev"
   },
   "dependencies": {
+    "eslint": "^4.14.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
     "micro": "^9.0.2",
     "micro-dev": "^2.1.1",
     "microrouter": "^3.0.0",
