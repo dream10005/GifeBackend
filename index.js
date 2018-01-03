@@ -7,6 +7,6 @@ const hello		= () => 'hello GIFE!!';
 const notFound	= (req, res) => send(res, 404, 'Not Found !! use /hello');
 
 module.exports	= router(
-  get('/hello', indexcontroller.hello),
+  get('/hello', indexcontroller.getAllPlaces),
   get('/*', notFound),
 );

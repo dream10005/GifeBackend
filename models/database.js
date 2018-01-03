@@ -1,12 +1,8 @@
-const mysql = require('mysql');
-
-const connection = mysql.createConnection({
+const gifebeta = {
   host     : '103.70.5.81',
   user     : 'gifebeta_root',
   password : 'password',
   database : 'gifebeta_db',
-});
-
-module.exports	= {
-	hello: connection
 };
+
+module.exports	=  gifebeta;
