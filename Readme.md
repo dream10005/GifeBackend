@@ -15,3 +15,4 @@ Code style
 * Use ESLint + Airbnb Javascript Style Guide
 * Write semantic code (explain the code by writing an understanble code. Minimize unnecessary comment)
 * ~~Declarative variable naming~~
+* USE 2 SPACES not tab
