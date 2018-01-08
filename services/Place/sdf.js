@@ -1,13 +1,7 @@
-const mysql 	= require('mysql');
-const gifebeta 	= require('./../models/database.js');
+const pool = require('./placeModel');
 
-let result = {};
-let a = [];
-
-const pool 	= mysql.createPool(gifebeta);
-
-module.exports	= {
-	getAllPlaces: function() {
+module.exports = {
+	getAllPlaces() {
 		pool.getConnection(function(err, connection) {
 		    connection.query("SELECT * FROM Places", function(err, rows) {
 		    	if (err) {
