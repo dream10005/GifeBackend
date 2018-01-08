@@ -1,11 +1,11 @@
 # GIFE backend
 
-This is product structure.
+This is application structure.
 
 Name | Description
 ------------ | -------------
 **configs** | contains all project configs *please beware of privacy and security of our project here.*
-**services** | *this is main directory* contains all backend logics
+**services** | *this is main directory* contains all backend logics. At least consists of 3 file (index, controller, model)
 **tests** | contains tests -> we use [AVA](https://github.com/avajs/ava)
 
 ---
