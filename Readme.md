@@ -16,3 +16,4 @@ Code style
 * Write semantic code (explain the code by writing an understanble code. Minimize unnecessary comment)
 * ~~Declarative variable naming~~
 * USE 2 SPACES not tab
+* Always try to use ES6 features, like async/await instead of Promise (we use node 8)
