@@ -1,5 +1,5 @@
 function ping() {
-  return 'ping place';
+  return 'ping user';
 }
 
 module.exports = {

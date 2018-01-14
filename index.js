@@ -3,21 +3,20 @@ const { send } = require('micro');
 const { router, get } = require('microrouter');
 
 // Services (of course)
-const User = require('./');
-const Place = require('./services/Place');
-const Challenge = require('./services/Challenge');
-const Gife = require('./services/Gife');
-const Reward = require('./services/Reward');
+const userRoutes = require('./services/User/userRoutes');
+const placeRoutes = require('./services/Place/placeRoutes');
+const challengeRoutes = require('./services/Challenge/challengeRoutes');
+const gifeRoutes = require('./services/Gife/gifeRoutes');
+const rewardRoutes = require('./services/Reward/rewardRoutes');
 
 const notFound = (req, res) => send(res, 404, 'Hi Hacker!');
 
 module.exports = router(
-  // Ping Ping
-  get('/ping/user', User.ping),
-  get('/ping/place', Place.ping),
-  get('/ping/challenge', Challenge.ping),
-  get('/ping/gife', Gife.ping),
-  get('/ping/reward', Reward.ping),
+  ...userRoutes,
+  ...placeRoutes,
+  ...challengeRoutes,
+  ...gifeRoutes,
+  ...rewardRoutes,
   // Welcoming hacker zone
   get('/*', notFound),
 );
