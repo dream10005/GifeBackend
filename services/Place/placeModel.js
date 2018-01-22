@@ -30,7 +30,18 @@ const UserDoingPlaces = Sequelize.define('UserDoingPlaces', {
   update_at: Sequelize.DATE,
 });
 
+const ExternalReviews = Sequelize.define('ExternalReviews', {
+  id: Sequelize.INTEGER,
+  place_id: Sequelize.INTEGER,
+  title: Sequelize.STRING,
+  author: Sequelize.STRING,
+  site_name: Sequelize.STRING,
+  site_url: Sequelize.STRING,
+  create_at: Sequelize.DATE,
+  update_at: Sequelize.DATE,
+});
 module.exports = {
   Places,
   UserDoingPlaces,
+  ExternalReviews,
 };
