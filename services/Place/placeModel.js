@@ -27,34 +27,36 @@ const Places = Sequelize.define(
   { underscored: true },
 );
 
-const UserDoingPlaces = Sequelize.define('UserDoingPlaces', {
-  id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true,
+const UserDoingPlaces = Sequelize.define(
+  'UserDoingPlaces', {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    user_id: DataTypes.INTEGER,
+    place_id: DataTypes.INTEGER,
+    challenge_id: DataTypes.INTEGER,
+    status: DataTypes.INTEGER,
   },
-  user_id: DataTypes.INTEGER,
-  place_id: DataTypes.INTEGER,
-  challenge_id: DataTypes.INTEGER,
-  status: DataTypes.INTEGER,
-  create_at: DataTypes.DATE,
-  update_at: DataTypes.DATE,
-});
+  { underscored: true },
+);
 
-const ExternalReviews = Sequelize.define('ExternalReviews', {
-  id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true,
+const ExternalReviews = Sequelize.define(
+  'ExternalReviews', {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    place_id: DataTypes.INTEGER,
+    title: DataTypes.STRING,
+    author: DataTypes.STRING,
+    site_name: DataTypes.STRING,
+    site_url: DataTypes.STRING,
   },
-  place_id: DataTypes.INTEGER,
-  title: DataTypes.STRING,
-  author: DataTypes.STRING,
-  site_name: DataTypes.STRING,
-  site_url: DataTypes.STRING,
-  create_at: DataTypes.DATE,
-  update_at: DataTypes.DATE,
-});
+  { underscored: true },
+);
 
 module.exports = {
   Places,
