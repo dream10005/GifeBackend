@@ -1,7 +1,11 @@
 const Sequelize = require('./../sequelize');
 
 const Places = Sequelize.define('Places', {
-  id: Sequelize.INTEGER,
+  id: {
+    type: Sequelize.INTEGER,
+    primaryKey: true,
+    autoIncrement: true,
+  },
   name: Sequelize.STRING,
   rating: Sequelize.FLOAT,
   rating_count: Sequelize.INTEGER,
@@ -40,8 +44,12 @@ const ExternalReviews = Sequelize.define('ExternalReviews', {
   create_at: Sequelize.DATE,
   update_at: Sequelize.DATE,
 });
+
 module.exports = {
   Places,
   UserDoingPlaces,
   ExternalReviews,
+};
+
+module.exports = function (sequelize, DataTypes) {
 };

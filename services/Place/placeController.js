@@ -1,5 +1,8 @@
+const Model = require('./placeModel');
+
 function getAllPlaces() {
-  return 'hello world';
+  const result = Model.Places.findAll();
+  return result;
 }
 
 function getPlacesById() {
