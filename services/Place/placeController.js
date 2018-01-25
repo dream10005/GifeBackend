@@ -6,7 +6,8 @@ function getAllPlaces() {
 }
 
 function getPlacesById() {
-  return 'getplacebyid';
+  const result = Model.Places.findById(1);
+  return result;
 }
 
 function getPlacesByType() {

@@ -1,48 +1,59 @@
 const Sequelize = require('./../sequelize');
 
-const Places = Sequelize.define('Places', {
+const DataTypes = require('sequelize');
+
+const Places = Sequelize.define(
+  'Places', {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    name: DataTypes.STRING,
+    rating: DataTypes.FLOAT,
+    rating_count: DataTypes.INTEGER,
+    district: DataTypes.STRING,
+    province: DataTypes.STRING,
+    picture: DataTypes.STRING,
+    latitude: DataTypes.FLOAT,
+    longitude: DataTypes.FLOAT,
+    address: DataTypes.STRING,
+    about: DataTypes.TEXT,
+    contact: DataTypes.STRING,
+    type: DataTypes.STRING,
+    price_min: DataTypes.INTEGER,
+    price_max: DataTypes.INTEGER,
+  },
+  { underscored: true },
+);
+
+const UserDoingPlaces = Sequelize.define('UserDoingPlaces', {
   id: {
-    type: Sequelize.INTEGER,
+    type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
   },
-  name: Sequelize.STRING,
-  rating: Sequelize.FLOAT,
-  rating_count: Sequelize.INTEGER,
-  district: Sequelize.STRING,
-  province: Sequelize.STRING,
-  picture: Sequelize.STRING,
-  latitude: Sequelize.FLOAT,
-  longitude: Sequelize.FLOAT,
-  address: Sequelize.STRING,
-  about: Sequelize.TEXT,
-  contact: Sequelize.STRING,
-  type: Sequelize.STRING,
-  price_min: Sequelize.INTEGER,
-  price_max: Sequelize.INTEGER,
-  create_at: Sequelize.DATE,
-  update_at: Sequelize.DATE,
-});
-
-const UserDoingPlaces = Sequelize.define('UserDoingPlaces', {
-  id: Sequelize.INTEGER,
-  user_id: Sequelize.INTEGER,
-  place_id: Sequelize.INTEGER,
-  challenge_id: Sequelize.INTEGER,
-  status: Sequelize.INTEGER,
-  create_at: Sequelize.DATE,
-  update_at: Sequelize.DATE,
+  user_id: DataTypes.INTEGER,
+  place_id: DataTypes.INTEGER,
+  challenge_id: DataTypes.INTEGER,
+  status: DataTypes.INTEGER,
+  create_at: DataTypes.DATE,
+  update_at: DataTypes.DATE,
 });
 
 const ExternalReviews = Sequelize.define('ExternalReviews', {
-  id: Sequelize.INTEGER,
-  place_id: Sequelize.INTEGER,
-  title: Sequelize.STRING,
-  author: Sequelize.STRING,
-  site_name: Sequelize.STRING,
-  site_url: Sequelize.STRING,
-  create_at: Sequelize.DATE,
-  update_at: Sequelize.DATE,
+  id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true,
+  },
+  place_id: DataTypes.INTEGER,
+  title: DataTypes.STRING,
+  author: DataTypes.STRING,
+  site_name: DataTypes.STRING,
+  site_url: DataTypes.STRING,
+  create_at: DataTypes.DATE,
+  update_at: DataTypes.DATE,
 });
 
 module.exports = {
