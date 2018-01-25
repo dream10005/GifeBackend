@@ -50,6 +50,3 @@ module.exports = {
   UserDoingPlaces,
   ExternalReviews,
 };
-
-module.exports = function (sequelize, DataTypes) {
-};
