@@ -4,7 +4,7 @@
   "description": "Super fast GIFE miceoservices using super lightweight nodejs Micro ",
   "main": "index.js",
   "repository": "https://github.com/dream10005/gife-backend.git",
-  "author": "Jirat Onaree <jirat.onaree@gmail.com>",
+  "author": "jeojoe, Dreamiiz",
   "license": "MIT",
   "scripts": {
     "start": "micro",
@@ -17,8 +17,6 @@
     "micro": "^9.0.2",
     "micro-dev": "^2.1.1",
     "microrouter": "^3.0.0",
-    "mysql2": "^1.5.1",
-    "sequelize": "^4.31.1",
-    "serverless-google-cloudfunctions": "^1.1.1"
+    "pg": "^7.4.1"
   }
 }
