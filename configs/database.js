@@ -1,8 +1,8 @@
-const gifebeta = {
-  host: '103.70.5.81',
-  user: 'gifebeta_root',
-  password: 'password',
-  database: 'gifebeta_db',
+const dbStaging = {
+  host: '128.199.240.141',
+  user: 'postgres',
+  password: 'o]qxvBiVNw*F90H',
+  database: 'gife-stag',
 };
 
-module.exports = gifebeta;
+module.exports = dbStaging;

@@ -5,4 +5,5 @@ const Controller = require('./userController');
 module.exports = [
   // ping
   get('/user/ping', Controller.ping),
+  get('/user/test', Controller.callTest),
 ];
