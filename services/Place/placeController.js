@@ -1,26 +1,46 @@
-const Model = require('./placeModel');
+const { Places, ExternalReviews } = require('./placeModel');
+const { send } = require('micro');
 
-function getAllPlaces() {
-  Model.Places.belongsTo(Model.ExternalReviews, { targetKey: 'place_id', foreignKey: 'id' });
-  const result = Model.Places.findAll({
+const notFound = JSON.parse('{"message" : "PLACE_NOT_FOUND"}');
+
+Places.hasMany(ExternalReviews, { as: 'review', foreignKey: 'place_id', targetKey: 'id' });
+
+async function getAllPlaces() {
+  const result = await Places.findAll({
     include: [{
-      model: Model.ExternalReviews,
+      model: ExternalReviews,
+      as: 'review',
     }],
   });
   return result;
 }
 
-function getPlacesById(req) {
-  const result = Model.Places.findById(req.query.id);
+async function getPlacesById(req, res) {
+  const result = await Places.findById(req.query.id, {
+    include: [{
+      model: ExternalReviews,
+      as: 'review',
+    }],
+  });
+  if (result == null) {
+    send(res, 404, notFound);
+  }
   return result;
 }
 
-function getPlacesByType(req) {
-  const result = Model.Places.findAll({
+function getPlacesByType(req, res) {
+  const result = Places.findAll({
     where: {
       type: req.query.type,
     },
+    include: [{
+      model: ExternalReviews,
+      as: 'review',
+    }],
   });
+  if (result == null) {
+    send(res, 404, notFound);
+  }
   return result;
 }
 
