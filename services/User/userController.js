@@ -5,8 +5,8 @@ function ping() {
 }
 
 async function callTest() {
-  await User.test();
-  return 'done';
+  const res = await User.test();
+  return res;
 }
 
 module.exports = {

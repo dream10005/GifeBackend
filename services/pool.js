@@ -1,11 +1,13 @@
-const dbConfig = require('../configs/database');
 const { Pool } = require('pg');
+// const crypto = require('crypto');
+const dbConfig = require('../configs/database');
 
 console.log(dbConfig);
 
 const pool = new Pool({
-  user: dbConfig.user,
   host: dbConfig.host,
+  user: dbConfig.user,
+  password: dbConfig.password,
   database: dbConfig.database,
   port: 5432,
 });
